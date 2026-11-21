@@ -1,0 +1,33 @@
+# AI Disease Prediction System
+
+## Overview
+This project is a Machine Learning-based web application that predicts possible diseases based on user-provided symptoms. It also provides basic health recommendations to help users take preventive care.
+
+## Features
+- Predicts disease based on symptoms input
+- Uses trained Machine Learning model
+- Simple and user-friendly web interface
+- Provides basic health recommendations
+
+## Tech Stack
+- Python
+- Machine Learning
+- Flask
+- HTML, CSS
+- Pandas, Scikit-learn
+
+## How to Run
+1. Install required libraries:
+   pip install -r requirements.txt
+
+2. Run the application:
+   python app.py
+
+3. Open browser and go to:
+   http://127.0.0.1:5000/
+
+## Dataset
+The model is trained on a structured health symptoms dataset.
+
+## Note
+This project is for educational purposes only and not a medical diagnosis tool.

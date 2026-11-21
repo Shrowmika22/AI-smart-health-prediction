@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #81f5f5, #a1e6f0);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #4333ed;
+            margin-top: 30px;
+        }
+        .container {
+            margin: 30px auto;
+            width: 90%;
+            max-width: 800px;
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-top: 30px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            display: inline-block;
+            margin: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            width: 200px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        .card img {
+            width: 200px;   /* bigger image */
+            height: 200px;  /* bigger image */
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            color: #00796b;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section h2 {
+            color: #dc0529;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🩺 Predicted Disease(s): {{ diseases | join(', ') }}</h1>
+
+        <div class="section">
+            <h2>🏡 Home Remedies</h2>
+            <div class="cards">
+            {% for r in home_remedies %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/' + r.image) }}" alt="{{ r.name }}">
+                    <p>{{ r.name }}</p>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💊 Medicines</h2>
+            <div class="cards">
+            {% for m in medicines %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/' + m.image) }}" alt="{{ m.name }}">
+                    <p>{{ m.name }}</p>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+
+        <a href="{{ url_for('home') }}">🔙 Go Back</a>
+    </div>
+</body>
+</html>
+

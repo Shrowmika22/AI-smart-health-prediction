@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🩺Smart Health Prediction🩺</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eb32eb;  /* light blue background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #dc0529; /* teal */
+            margin-top: 180px;
+        }
+        form {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background: #4749c5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        input[type="submit"]:hover {
+            background: #471fd5;
+        }
+    </style>
+</head>
+<body>
+    <h1>🩺Smart Health Prediction🩺</h1>
+    <form action="/predict" method="POST">
+        <label><input type="checkbox" name="symptoms" value="fever"> Fever</label><br>
+        <label><input type="checkbox" name="symptoms" value="cough"> Cough</label><br>
+        <label><input type="checkbox" name="symptoms" value="headache"> Headache</label><br>
+        <label><input type="checkbox" name="symptoms" value="cold"> Cold</label><br>
+        <label><input type="checkbox" name="symptoms" value="vomiting"> Vomiting</label><br>
+        <label><input type="checkbox" name="symptoms" value="body pains"> Body Pains</label><br>
+        <label><input type="checkbox" name="symptoms" value="chest pain"> Chest Pain</label><br>
+        <label><input type="checkbox" name="symptoms" value="period pain"> Period Pain</label><br>
+        <label><input type="checkbox" name="symptoms" value="skin rash / itching"> Skin Rash / Itching</label><br>
+        <label><input type="checkbox" name="symptoms" value="breathing difficulty"> Breathing Difficulty</label><br>
+        <label><input type="checkbox" name="symptoms" value="diabetes"> Diabetes</label><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

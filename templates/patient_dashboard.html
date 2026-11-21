@@ -1,0 +1,7 @@
+@app.route('/patient')
+def patient_dashboard():
+    print("SESSION:", session)  # Debug
+    if 'role' in session and session['role'] == 'patient':
+        return render_template("patient_dashboard.html")
+    else:
+        return f"Access Denied. Your role is: {session.get('role')}"
